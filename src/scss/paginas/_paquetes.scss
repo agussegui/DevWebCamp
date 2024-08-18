@@ -1,0 +1,146 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.paquetes__nuevo{
+    background-color: v.$ash;
+
+}
+.paquetes{
+
+    &__descripcion{
+        font-size: 2rem;
+    }
+    
+
+    &__grid{
+        @include m.contenedor;
+        @include m.grid(1, 3rem);
+        @include m.tablet {
+            @include m.grid(3, 3rem);
+            align-items: flex-start;
+            
+        }
+    }
+    &__submit{
+        margin-top: 3rem;
+		background-color: #0070ba;
+		border-radius: 6px;
+		color: v.$blanco;
+        width: 100%;
+		font-weight: 500;
+		font-size: 2rem;
+		border: 0;
+		padding: 1.5rem;
+		&:hover{
+		 	background-color: v.$governor;
+            cursor: pointer;
+            transition: 300ms all ease-in-out;
+		}
+	
+    }
+
+    .cards{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+        width: 100%;
+        margin: 10vh auto;
+    }
+    .paquete {
+        &:nth-child(2){
+            order: -1;
+            @include m.tablet{
+                order: unset;
+            }
+        }
+        padding: 10px;
+        background-color: v.$blanco;
+        color: v.$rio;
+        border-radius: 16px;
+        box-shadow: 0 30px 30px -25px rgba(#837eb0, .25);
+        
+    
+        .paquete__box{
+            color: v.$black;
+            padding: 20px;
+            padding-top: 40px;
+            background-color: v.$pink;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+    
+            .paquete__nombre{
+                font-size: 2.5rem;
+                color: v.$coffe;
+                & + * {
+                    margin-top: .75rem;
+                }
+            }
+            .paquete__lista{
+                display: flex;
+                flex-direction: column;
+    
+                .paquete__elemento{
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                    & + * {
+                    margin-top: .75rem;
+                    }
+                    .paquete__circle{
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: v.$verde-agua;
+                        border-radius: 50%;
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+            .paquete__precio {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background-color: v.$apricot;
+                border-radius: 99em 0 0 99em;
+                display: flex;
+                align-items: center;
+                padding: .625em .75em;
+                font-size: 2.5rem;
+                font-weight: 600;
+                color: v.$coffe;
+                small {
+                    color: v.$rio;
+                    font-size: .75em;
+                    margin-left: .25em;
+                }
+            }
+
+            .paquete__precio-registro {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: v.$apricot;
+                border-radius: 99em 0 0 99em;
+                display: flex;
+                align-items: center;
+                padding: .625em .75em;
+                font-size: 2.5rem;
+                font-weight: 600;
+                color: v.$coffe;
+                small {
+                    color: v.$rio;
+                    font-size: .75em;
+                    margin-left: .25em;
+                }
+            }
+        }
+    }
+}    
+

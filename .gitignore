@@ -1,0 +1,8 @@
+.env
+/vendor
+.env.local
+
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz

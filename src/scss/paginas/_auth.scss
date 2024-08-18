@@ -1,0 +1,17 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.auth{
+    @include m.contenedor-sm;
+    
+    @include m.tablet{
+        background-color: v.$blanco;
+        padding: 15px 45px 20px 3rem;
+        border-radius: 10px;
+    }
+    
+}
+
+.auth-texto{
+    font-size: 2rem;
+}

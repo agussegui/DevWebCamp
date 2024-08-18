@@ -1,0 +1,23 @@
+@use 'base/variables' as v;
+
+.acciones{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    
+    &--centrar{
+        justify-content: center;
+    }
+    &__enlace{
+        color: v.$negro;
+        font-size: 1.7rem;
+        font-weight: v.$regular;
+
+        &:hover{
+            cursor: pointer;
+            color: v.$azul;
+            transition:300ms ease-in-out ;
+        }
+    }
+    
+}

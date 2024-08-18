@@ -1,0 +1,105 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.speakers{
+
+    &__grid{
+        @include m.contenedor;
+        @include m.grid(1, 5rem);
+        @include m.tablet{
+            @include m.grid(2, 5rem);
+        }
+        @include m.xl_desktop{
+            @include m.grid(3, 5rem);
+            align-items: center
+        }
+    }
+}
+
+.speaker{
+    @include m.card;
+    margin: 0 15px 30px;
+    overflow: hidden;
+    
+
+    &__item{
+        display: block;
+        padding: 30px 20px;
+        overflow: hidden;
+        position: relative;
+
+        &__bg{
+            height: 128px;
+            width: 128px;
+            background-color: v.$azul;
+            z-index: 1;
+            position: absolute;
+            top: -75px;
+            left: -75px;
+            border-radius: 50%;
+            transition: all .5s ease;
+            &:hover{
+                -webkit-transform: scale(2);
+                -ms-transform: scale(2);
+                transform: scale(9.7);
+                background-color: v.$secundario;
+            }
+            
+        }   
+        &__imagen{
+            z-index: 1;
+            position: relative;
+            border-radius: 30px;
+            //background-color: white;
+        }
+
+        &__box{
+            z-index: 2;
+            position: relative;
+
+            &__informacion{
+                &__nombre{
+                    color: v.$negro;
+                    font-size: 3rem;
+                   
+                    margin: 2rem 0 ;
+                }
+                &__ubicacion{
+                    color: v.$gris;
+                    margin: 1rem 0;
+                    font-size: 2rem;
+                    line-height: 1.5;
+                    
+                }
+            }
+
+        }
+       
+    }
+}
+
+.speaker-sociales{
+    @include m.menu-social(v.$negro, 3rem);
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+
+}
+.speaker__listado-skills{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 1.5rem; 
+    margin-top: 1.5rem;
+    .speaker__skill{
+        color: v.$blanco;
+        background-color: v.$azul;
+        margin-top: 2rem;
+        padding: 1.3rem;
+        border-radius: .5rem;
+        font-size: 1.6rem;
+        columns: v.$blanco;
+        font-weight: v.$bold;
+    }
+}

@@ -1,0 +1,210 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.ticket{
+    display: flex;
+    width: min(100% - 5rem, 65rem);
+    margin: 3rem auto;
+    color: #fff;
+    font-family: sans-serif;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .ticket {
+        flex-direction: column;
+    }
+}    
+
+.tickets{
+    background: linear-gradient(to bottom, v.$azul-oscuro 0%, v.$azul-oscuro 26%, v.$gris-ticket 26%, v.$gris-ticket 100%);
+    padding: 1rem;
+    position: relative;
+    float: left;
+}
+
+@media only screen and (max-width: 767px) {
+    .tickets {
+        background: linear-gradient(to bottom, v.$azul-oscuro 0%, v.$azul-oscuro 26%, v.$gris-ticket 26%, v.$gris-ticket 100%);
+        flex-direction: column;
+        align-items: center;
+        margin:0
+    }
+    
+}
+.tickets--left{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin: 0;
+    width: 55%;
+}
+
+.tickets--right{
+    width: 30%;
+    @media only screen and (min-width: 767px){
+        border-left: .40rem dashed #fff;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 1.9rem;
+            height: 1.9rem;
+            background: v.$ash;
+            border-radius: 50%;
+            left: -1.1rem;
+        }
+        &:before {
+            top: -.5rem;
+        }
+        &:after {
+            bottom: -.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .tickets--left {
+        width: 100%;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    
+}
+
+@media only screen and (max-width: 767px) {
+    .tickets--right {
+        width: 100%;
+        border-top: .50rem dashed #fff;
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        background-color: v.$ash;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: calc(4.5% - 2.5rem);
+    }
+
+    &::before{
+        clip-path: circle(50% at 25% 50%);
+        left: 0;
+    }
+
+    &::after{
+        clip-path: circle(50% at 75% 50%);
+        right: 0;
+    }
+    }
+}
+
+.ticket__caja{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+    .ticket__caja {
+        flex-direction: column;
+    }
+} 
+
+.ticket__caja__logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+    
+}
+.ticket__cuerpo{
+    padding: 10px;
+}
+.ticket__cuerpo__titulo{
+    font-weight: bold;
+    color: v.$gris-oscuro;
+    
+    font-size: 1.6rem
+}
+
+.ticket__cuerpo__plan{
+    color: v.$gris;
+    font-weight: bold;
+    font-size: 2.1rem;
+    text-transform: uppercase;
+}
+
+.ticket__cuerpo__nombre{
+    color: v.$gris;
+    font-weight: bold;
+    font-size: 2.1rem;
+    text-transform: uppercase;
+}
+
+.ticket__codigo{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.barcode-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+@media only screen and (min-width: 767px) {
+    .barcode-box {
+        display: flex;
+        justify-content: center;
+
+    }
+} 
+.barcode {
+    height: 5rem;
+    width: 0;
+    margin: 7.5rem 9.4rem 0 0;
+    box-shadow: 1px 0 0 1px v.$negro,
+    5px 0 0 1px v.$negro,
+    10px 0 0 1px v.$negro,
+    11px 0 0 1px v.$negro,
+    15px 0 0 1px v.$negro,
+    18px 0 0 1px v.$negro,
+    22px 0 0 1px v.$negro,
+    23px 0 0 1px v.$negro,
+    26px 0 0 1px v.$negro,
+    30px 0 0 1px v.$negro,
+    35px 0 0 1px v.$negro,
+    37px 0 0 1px v.$negro,
+    41px 0 0 1px v.$negro,
+    44px 0 0 1px v.$negro,
+    47px 0 0 1px v.$negro,
+    51px 0 0 1px v.$negro,
+    56px 0 0 1px v.$negro,
+    59px 0 0 1px v.$negro,
+    64px 0 0 1px v.$negro,
+    68px 0 0 1px v.$negro,
+    72px 0 0 1px v.$negro,
+    74px 0 0 1px v.$negro,
+    77px 0 0 1px v.$negro,
+    81px 0 0 1px v.$negro,
+    84px 0 0 1px v.$negro,
+    89px 0 0 1px v.$negro,
+    92px 0 0 1px v.$negro,
+    96px 0 0 1px v.$negro,
+    101px 0 0 1px v.$negro,
+    105px 0 0 1px v.$negro,
+    // 109px 0 0 1px v.$negro,
+    // 112px 0 0 1px v.$negro,
+    // 117px 0 0 1px v.$negro,
+    // 121px 0 0 1px v.$negro,
+    // 125px 0 0 1px v.$negro;
+}
+

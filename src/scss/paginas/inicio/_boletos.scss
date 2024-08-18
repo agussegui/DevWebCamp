@@ -1,0 +1,93 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.boletos{
+    &__grid{
+        @include m.contenedor-sm;
+        @include m.grid(1, 5rem);
+    }
+}
+
+.boleto{
+    width: min(100% - 5rem, 65rem);
+    margin: 0 auto;
+    padding: 6rem;
+    border-radius: 2rem;
+    color: v.$blanco;
+    position: relative;
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        background-color: v.$ash;
+        width: 5rem;
+        height: 5rem;
+        top: calc(50% - 2.5rem);
+    }
+
+    &::before{
+        clip-path: circle(50% at 25% 50%);
+        left: 0;
+    }
+
+    &::after{
+        clip-path: circle(50% at 75% 50%);
+        right: 0;
+    }
+
+
+    &--presencial{
+        background-color:hsla(208,95%,24%,1);
+        background-image:
+        radial-gradient(at 53% 32%, hsla(208,95%,24%,1) 0px, transparent 50%),
+        radial-gradient(at 44% 36%, hsla(178,100%,39%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(208,95%,24%,1) 0px, transparent 50%),
+        radial-gradient(at 54% 49%, hsla(178,100%,39%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(208,95%,24%,1) 0px, transparent 50%),
+        radial-gradient(at 80% 100%, hsla(178,100%,39%,1) 0px, transparent 50%),
+        radial-gradient(at 46% 57%, hsla(208,95%,24%,1) 0px, transparent 50%);
+    }
+    &--virtual{
+        background-color:hsla(178,100%,39%,1);
+        background-image:
+        radial-gradient(at 25% 48%, hsla(209,100%,47%,1) 0px, transparent 50%),
+        radial-gradient(at 64% 46%, hsla(178,100%,39%,1) 0px, transparent 50%),
+        radial-gradient(at 73% 50%, rgb(83, 162, 235) 0px, transparent 50%),
+        radial-gradient(at 83% 70%, hsla(178,100%,39%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(209,100%,47%,1) 0px, transparent 50%),
+        radial-gradient(at 72% 78%, hsla(178,100%,39%,1) 0px, transparent 50%),
+        radial-gradient(at 90% 3%, hsla(209,100%,47%,1) 0px, transparent 50%);
+    }
+    &--gratis{
+        background-color: v.$azul;
+
+    }
+    &__logo{
+        @include m.logo;
+        @include m.texto-fluido(2rem, 4rem);
+        display: flex;
+        justify-content: center;
+    }
+    &__plan{
+        font-size: 2rem;
+        text-transform: uppercase;
+        margin: 3rem 0 0 0;
+    }
+    &__precio{
+        margin: 3rem 0 0 0;
+        font-weight: v.$black;
+        font-size: 3.5rem;
+    }
+
+    &__enlace-contenedor{
+        margin-top: 5rem; 
+        display: flex;
+        justify-content: center;
+    }
+    &__enlace{
+        @include m.boton(v.$azul-oscuro, v.$blanco);
+        width: auto;
+    }
+
+}
