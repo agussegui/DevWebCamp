@@ -155,8 +155,6 @@ class ActiveRecord {
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
-
-
     // Busqueda Where con Multiples Opciones 
     // Construye una cadena de consulta SQL concatenando los pares clave-valor del array `$array`, separados por `AND`, donde el último par no tiene el operador `AND` al final.
      // Busqueda Where con Múltiples opciones
@@ -237,10 +235,11 @@ class ActiveRecord {
         }
 
         // Consulta SQL
-        $query = "UPDATE" . static::$tabla ." SET ";
-        $query .=  join(', ', $valores );
+        $query = "UPDATE " . static::$tabla . " SET ";
+        $query .= join(', ', $valores);
         $query .= " WHERE id = '" . self::$db->escape_string($this->id) . "' ";
-        $query .= " LIMIT 1 "; 
+        $query .= " LIMIT 1 ";
+
 
         // Actualizar BD
         $resultado = self::$db->query($query);
